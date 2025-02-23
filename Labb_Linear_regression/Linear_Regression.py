@@ -1,5 +1,6 @@
 import numpy as np
 import scipy.stats as stats
+import matplotlib.pyplot as plt
 
 class Linear_Regression:
 
@@ -12,7 +13,7 @@ class Linear_Regression:
         return np.linalg.pinv(self.X.T @ self.X) @ self.X.T @ self.Y
     
     @property
-    def d(self):        # number of features of the model.
+    def d (self):        # number of features of the model.
         return self.X.shape[1]-1
     
     @property
@@ -24,7 +25,7 @@ class Linear_Regression:
         return np.sum(np.square(self.Y-(self.X @ self.fit)))
         
     @property
-    def var(self):      # A function or method to calculate the variance.
+    def var (self):      # A function or method to calculate the variance.
         return self.SSE/(self.n-self.d-1)
     
     @property
