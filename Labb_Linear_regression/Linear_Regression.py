@@ -41,5 +41,13 @@ class Linear_Regression:
         return self.Syy - self.SSE
     
     @property
+    def sig_statisitc(self):
+        return (self.SSR/self.d)/self.st_dev
+    
+    @property
+    def p_significance(self):
+        return stats.f.sf(self.sig_statisitc, self.d, self.n-self.d-1)
+    
+    @property
     def Rsq(self):
         return self.SSR/self.Syy
